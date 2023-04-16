@@ -10,6 +10,6 @@ const blogsRouter = express.Router();
 
 blogsRouter.route("/").get(getBlogs).post(createBlog);
 
-employeeRouter.route("/:id").patch(updateBlog).delete(deleteBlog);
+blogsRouter.route("/:id").patch(updateBlog).delete(deleteBlog);
 
 export default blogsRouter;

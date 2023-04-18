@@ -2,8 +2,8 @@ const DateInput = ({ props }) => {
   return (
     <input
       type="date"
-      value={dateInputValue}
-      onChange={onChangeDateInput}
+      value={props.dateInputValue}
+      onChange={props.onChangeDateInput}
     ></input>
   );
 };

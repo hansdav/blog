@@ -1,0 +1,40 @@
+.header-container {
+  display: flex;
+  background-color: burlywood;
+  color: aliceblue;
+  text-align: justify;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header-container > :nth-child(1) {
+  flex: 1;
+  flex-basis: 5%;
+  margin: 20px;
+}
+
+.header-container > :nth-child(2) {
+  flex: 1;
+  flex-basis: 70%;
+  margin: 20px;
+}
+
+.header-container > :nth-child(3) {
+  flex: 1;
+  flex-basis: 20%;
+  margin: 20px;
+}
+
+a:visited {
+  color: blueviolet;
+}
+
+.button-create {
+  border-radius: 20px;
+  font-size: 16px;
+  padding: 10px;
+}
+
+.button-create:hover {
+  background-color: blanchedalmond;
+}

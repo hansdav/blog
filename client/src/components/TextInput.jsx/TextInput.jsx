@@ -1,11 +1,11 @@
 const TextInput = ({ props }) => {
   return (
     <div>
-      <label>{labelTextInput}</label>
+      <label>{props.labelTextInput}</label>
       <input
         type="text"
-        value={textInputValue}
-        onChange={onTextInputChanged}
+        value={props.textInputValue}
+        onChange={props.onTextInputChange}
       ></input>
     </div>
   );

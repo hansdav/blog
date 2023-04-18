@@ -1,5 +1,5 @@
 const Button = ({ props }) => {
-  return <button onClick={onButtonClicked}>{buttonText}</button>;
+  return <button onClick={props.onButtonClicked}>{props.buttonText}</button>;
 };
 
 export default Button;

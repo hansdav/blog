@@ -1,4 +1,4 @@
-const TextInput = ({ props }) => {
+const TextInput = (props) => {
   return (
     <div>
       <label>{props.labelTextInput}</label>

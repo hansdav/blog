@@ -1,10 +1,13 @@
-const DateInput = ({ props }) => {
+const DateInput = (props) => {
   return (
-    <input
-      type="date"
-      value={props.dateInputValue}
-      onChange={props.onChangeDateInput}
-    ></input>
+    <div>
+      <label>{props.labelDateInput}</label>
+      <input
+        type="date"
+        value={props.dateInputValue}
+        onChange={props.onChangeDateInput}
+      ></input>
+    </div>
   );
 };
 

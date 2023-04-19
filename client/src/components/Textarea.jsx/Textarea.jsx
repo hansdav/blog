@@ -1,8 +1,11 @@
-const Textarea = ({ props }) => {
+const Textarea = (props) => {
   return (
     <div>
       <label>{props.labelTextarea}</label>
-      <textarea value={props.textareaValue} onChange={props.onTextareaChanged}></textarea>
+      <textarea
+        value={props.textareaValue}
+        onChange={props.onTextareaChange}
+      ></textarea>
     </div>
   );
 };

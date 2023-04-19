@@ -1,9 +1,12 @@
 import DateInput from "../DateInput/DateInput.jsx";
 import TextInput from "../TextInput/TextInput.jsx";
 import Textarea from "../Textarea/Textarea.jsx";
-import Button from "../Button.jsx";
+import Button from "../Button/Button.jsx";
 
-const Form = ({ props }) => {
+const Form = (props) => {
+  const onCancelButtonClicked = () => {
+    console.log("cancel");
+  };
   return (
     <div>
       <TextInput
@@ -12,6 +15,7 @@ const Form = ({ props }) => {
         onTextInputChange={props.onTitleChange}
       />
       <DateInput
+        labelDateInput="Date: "
         dateInputValue={props.dateInputValue}
         onChangeDateInput={props.onChangeDateInput}
       />
@@ -25,7 +29,10 @@ const Form = ({ props }) => {
         textareaValue={props.textareaValue}
         onTextareaChange={props.onTextareaChange}
       />
-      <Button onButtonClicked={props.onPostButtonClicked} buttonText="Post" />
+      <Button
+        onButtonClicked={props.onPostButtonClicked}
+        buttonText={props.postButtonText}
+      />
       <Button onButtonClicked={onCancelButtonClicked} buttonText="Cancel" />
     </div>
   );

@@ -1,17 +1,16 @@
 import { useNavigate } from "react-router-dom";
-import Form from "../components/Form.jsx/Form";
-import { json } from "stream/consumers";
+import Form from "../components/Form/Form.jsx";
 
 const createBlogPost = async (blogData) => {
   try {
-    const response = await fetch("/api/blogs", {
+    const response = await fetch("http://localhost:5050/api/blogs", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(blogData),
     });
-    return await res.json();
+    return await response.json();
   } catch (error) {
     console.error(error);
   }
@@ -19,7 +18,15 @@ const createBlogPost = async (blogData) => {
 
 const CreateBlogLayout = () => {
   const navigate = useNavigate();
-  return <Form />;
+  const handleCreateBlogPost = async (blogData) => {
+    try {
+      await createBlogPost(blogData);
+      navigate("/");
+    } catch (error) {
+      console.error(error);
+    }
+  }
+  return <Form functionFromCreateBlogPage={handleCreateBlogPost} />;
 };
 
 export default CreateBlogLayout;

@@ -1,4 +1,4 @@
-import miniBlog from "../components/miniblog/miniblog";
+import miniBlog from "../components/Miniblog/miniblog";
 
 const BlogPage = ({ blogs }) => {
 	return (

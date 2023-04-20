@@ -4,12 +4,13 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import MainLayout from "./pages/layouts/MainLayout";
 import ContentPage from "./pages/ContentPage";
+import CreateBlogPage from "./pages/CreateBlogPage";
 
 const router = createBrowserRouter([
 	{
 		path: "/",
 		element: <MainLayout />,
-		children: [{ path: "", element: <ContentPage /> }],
+		children: [{ path: "", element: <ContentPage /> },{ path: "/CreateBlog", element: <CreateBlogPage /> }],
 	},
 ]);
 

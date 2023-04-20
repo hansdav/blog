@@ -1,14 +1,18 @@
-import { useState } from 'react';
+import miniBlog from "../components/miniblog/miniblog";
 
-const BlogPage = (blogs) => {
-  const [allBlogs, setAllBlogs] = useState(blogs);
-
-  console.log(blogs);
-  return (
-    <div>
-      <h1>Blog: </h1>
-    </div>
-  );
+const BlogPage = ({ blogs }) => {
+	return (
+		<div className="BlogPage">
+			{blogs.map((blog) => (
+				<miniBlog
+					title={blog.title}
+					author={blog.author}
+					post={blog.post}
+					date={blog.date}
+				></miniBlog>
+			))}
+		</div>
+	);
 };
 
 export default BlogPage;

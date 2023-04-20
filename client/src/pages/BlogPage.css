@@ -1,5 +1,8 @@
 .BlogPage {
-	display: flex;
-	flex-wrap: wrap;
-	width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
 }

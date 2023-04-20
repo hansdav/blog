@@ -1,0 +1,12 @@
+.popup-field {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: blueviolet;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 20px;
+  border-radius: 20px;
+  z-index: 1;
+}

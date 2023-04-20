@@ -28,6 +28,9 @@ const MainLayout = () => (
       </div>
     </nav>
     <Outlet />
+    <div className='footer'>
+      <h4>Team project by @React-Pros-3000 Hans, Kata, Viki est. 2023</h4>
+    </div>
   </div>
 );
 

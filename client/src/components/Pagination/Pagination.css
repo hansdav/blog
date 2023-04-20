@@ -17,7 +17,7 @@ li {
 .page-link {
   background-color: lightgray;
   padding: 5px;
-
+  font-family: Arial, Helvetica, sans-serif;
   text-decoration: none;
   background: linear-gradient(to right bottom, var(--slist)) border-box;
 }

@@ -19,7 +19,7 @@ const MainLayout = () => (
           </Link>
         </div>
         <div>
-          <Link to='/create'>
+          <Link to='/createBlog'>
             <button className='button-create' type='button'>
               Create Post
             </button>

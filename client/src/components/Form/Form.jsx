@@ -31,7 +31,7 @@ const Form = (props) => {
     }
   }, [blogData]);
 
-  console.log(blogData);
+  //console.log(blogData);
 
   const onChangeTitle = (e) => {
     setTitleValue(e.target.value);
@@ -40,7 +40,7 @@ const Form = (props) => {
 
   const onChangeDate = (e) => {
     setDateInputValue(e.target.value);
-    setBlogData({ ...blogData, date: e.target.value });
+    setBlogData({ ...blogData, created: e.target.value });
   };
 
   const onChangeAuthor = (e) => {
@@ -50,10 +50,10 @@ const Form = (props) => {
 
   const onChangeContent = (e) => {
     setContentValue(e.target.value);
-    setBlogData({ ...blogData, blogContent: e.target.value });
+    setBlogData({ ...blogData, post: e.target.value });
   };
 
-  console.log(dateInputValue);
+  //console.log(dateInputValue);
 
   const onCancelButtonClicked = () => {
     console.log("cancel");
@@ -61,7 +61,10 @@ const Form = (props) => {
 
   const onPostButtonClicked = () => {
     console.log("post");
+    console.log({...blogData, likes: 0});
+    props.functionFromCreateBlogPage({...blogData, likes: 0});
   };
+
   return (
     <div>
       <TextInput

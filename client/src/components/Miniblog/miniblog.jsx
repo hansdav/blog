@@ -1,4 +1,6 @@
-const miniBlog = ({ title, author, date, post }) => {
+import "./MiniBlog.css";
+
+const MiniBlog = ({ title, author, date, post }) => {
 	return (
 		<div className="container">
 			<img
@@ -14,4 +16,4 @@ const miniBlog = ({ title, author, date, post }) => {
 	);
 };
 
-export default miniBlog;
+export default MiniBlog;

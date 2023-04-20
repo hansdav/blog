@@ -1,4 +1,5 @@
 import MiniBlog from '../components/Miniblog/MiniBlog.jsx';
+import './BlogPage.css';
 
 const BlogPage = ({ blogs }) => {
   return (

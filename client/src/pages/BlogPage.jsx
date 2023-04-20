@@ -1,15 +1,15 @@
-import miniBlog from "../components/miniblog/miniblog";
+import MiniBlog from "../components/Miniblog/MiniBlog.jsx";
 
 const BlogPage = ({ blogs }) => {
 	return (
 		<div className="BlogPage">
 			{blogs.map((blog) => (
-				<miniBlog
+				<MiniBlog
 					title={blog.title}
 					author={blog.author}
 					post={blog.post}
 					date={blog.date}
-				></miniBlog>
+				></MiniBlog>
 			))}
 		</div>
 	);

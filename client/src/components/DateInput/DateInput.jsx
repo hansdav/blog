@@ -1,7 +1,8 @@
 const DateInput = (props) => {
   return (
-    <div>
+    <div className="DateInputClass">
       <label>{props.labelDateInput}</label>
+      <br/>
       <input
         type="date"
         value={props.dateInputValue}

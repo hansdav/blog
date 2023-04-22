@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Form from "../components/Form/Form.jsx";
 import { useEffect, useState } from "react";
 
@@ -29,9 +29,8 @@ const updateBlogPost = async (blogData) => {
   }
 };
 
-const UpdateBlogPage = () => {
-  const id = "6441757c52e647d04967021a";
-  //const [id, setId] = useState("6441757c52e647d04967021a");
+const UpdateBlogPage = (props) => {
+  const { id } = useParams();
   const navigate = useNavigate();
   const [blogPost, setBlogPost] = useState(null);
 

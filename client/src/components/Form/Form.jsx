@@ -84,9 +84,10 @@ const Form = (props) => {
       <TextInput
         textInputLabel="Title: "
         textInputValue={titleValue}
-        onTextInputChange={onChangeTitle}
+        onChange={onChangeTitle}
       />
       <DateInput
+        DateInputClass="Form-DateInput"
         labelDateInput="Date: "
         dateInputValue={dateInputValue}
         onChangeDateInput={onChangeDate}
@@ -94,7 +95,7 @@ const Form = (props) => {
       <TextInput
         textInputLabel="Author: "
         textInputValue={authorValue}
-        onTextInputChange={onChangeAuthor}
+        onChange={onChangeAuthor}
       />
       <Textarea
         labelTextarea="Blog Content: "
@@ -103,10 +104,12 @@ const Form = (props) => {
       />
       <div className="Formbuttons">
         <Button
+          buttonClass="Form-button"
           onButtonClicked={onPostButtonClicked}
           buttonText={props.blogData ? "Update" : "Post"}
         />
         <Button
+          buttonClass="Form-button"
           onButtonClicked={onCancelButtonClicked}
           buttonText="Cancel"
         />

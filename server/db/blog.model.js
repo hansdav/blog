@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 const { Schema, model } = mongoose;
 
 const BlogSchema = new Schema({
+	//_id: String,
 	author: String,
 	title: String,
 	post: String,

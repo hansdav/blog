@@ -10,6 +10,15 @@ export const getBlogs = async (req, res, next) => {
 	}
 };
 
+export const getBlogsById = async (req, res, next) => {
+	try {
+		const blogs = await Blog.findById(req.params.id);
+		return res.json(blogs);
+	} catch (error) {
+		next(error);
+	}
+};
+
 export const createBlog = async (req, res, next) => {
 	const blog = req.body;
 

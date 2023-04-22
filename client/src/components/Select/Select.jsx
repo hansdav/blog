@@ -1,8 +1,12 @@
-const Select = ({ className, onChange, value }) => {
+const Select = ({ className, onChange, value, values }) => {
 	return (
-		<select className={className} onChange={onChange} value={value}>
-			{props.values.map((value) => {
-				return <option value={value}>{value}</option>;
+		<select className={className} onChange={onChange}>
+			{values.map((value) => {
+				return (
+					<option key={value} value={value}>
+						{value}
+					</option>
+				);
 			})}
 		</select>
 	);

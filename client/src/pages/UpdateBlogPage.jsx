@@ -11,7 +11,7 @@ const fetchBlogPost = async (id) => {
   }
 };
 
-const createBlogPost = async (blogData) => {
+const updateBlogPost = async (blogData) => {
   try {
     const response = await fetch(
       `http://localhost:5050/api/blogs/${blogData._id}`,
@@ -29,9 +29,9 @@ const createBlogPost = async (blogData) => {
   }
 };
 
-const UpdateBlogLayout = () => {
-    //TOOOOOOOOOOOOOODOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
-  //const id = "figure out how";
+const UpdateBlogPage = () => {
+  const id = "6441757c52e647d04967021a";
+  //const [id, setId] = useState("6441757c52e647d04967021a");
   const navigate = useNavigate();
   const [blogPost, setBlogPost] = useState(null);
 
@@ -49,7 +49,7 @@ const UpdateBlogLayout = () => {
 
   const handleUpdateBlogPost = async (blogData) => {
     try {
-      await createBlogPost(blogData);
+      await updateBlogPost(blogData);
       navigate("/");
     } catch (error) {
       console.error(error);
@@ -63,4 +63,4 @@ const UpdateBlogLayout = () => {
   );
 };
 
-export default UpdateBlogLayout;
+export default UpdateBlogPage;

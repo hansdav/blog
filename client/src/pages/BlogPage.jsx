@@ -5,6 +5,11 @@ import './BlogPage.css';
 const BlogPage = ({ blogs, sortDate, sortLikes }) => {
   return (
     <>
+      <div className='heading-blog'>
+        <h2>
+          <u>All Blogs</u>
+        </h2>
+      </div>
       <QueryPanel sortDate={sortDate} sortLikes={sortLikes}></QueryPanel>
       <div className='BlogPage'>
         {blogs.map((blog) => (

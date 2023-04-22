@@ -1,0 +1,15 @@
+.main-likes {
+  font-family: Arial, Helvetica, sans-serif;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.liked-blogs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+}

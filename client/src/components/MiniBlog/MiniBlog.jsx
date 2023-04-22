@@ -2,7 +2,7 @@ import './MiniBlog.css';
 import React, { useState, useEffect } from 'react';
 import Popup from '../Popup/Popup';
 
-const MiniBlog = ({ title, author, date, post }) => {
+const MiniBlog = ({ title, author, date, post, likes, id }) => {
   const [showPopup, setShowPopup] = useState(false);
 
   function handleTitleClick() {
@@ -21,6 +21,8 @@ const MiniBlog = ({ title, author, date, post }) => {
           author={author}
           date={date}
           post={post}
+          likes={likes}
+          id={id}
           onClose={handlePopupClose}
         />
       ) : null}

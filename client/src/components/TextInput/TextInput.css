@@ -1,10 +1,10 @@
-div {
-	display: flex;
-	flex-wrap: wrap;
+#input-boxes {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 label {
-	width: 100%;
+  width: 100%;
 }
 
 input {

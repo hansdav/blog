@@ -31,6 +31,7 @@ const updateBlogPost = async (blogData) => {
 
 const UpdateBlogPage = (props) => {
   const { id } = useParams();
+  console.log(id);
   const navigate = useNavigate();
   const [blogPost, setBlogPost] = useState(null);
 

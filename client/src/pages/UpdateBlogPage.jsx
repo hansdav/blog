@@ -30,9 +30,8 @@ const updateBlogPost = async (blogData) => {
 };
 
 const UpdateBlogPage = () => {
-    //TOOOOOOOOOOOOOODOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
-  //const id = "figure out how";
   const id = "6441757c52e647d04967021a";
+  //const [id, setId] = useState("6441757c52e647d04967021a");
   const navigate = useNavigate();
   const [blogPost, setBlogPost] = useState(null);
 

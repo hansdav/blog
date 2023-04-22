@@ -2,20 +2,18 @@ import Select from "../Select/Select";
 import TextInput from "../TextInput/TextInput";
 import "./QueryPanel.css";
 
-const QueryPanel = ({ sortLikes, sortDate }) => {
+const QueryPanel = ({ sortLikes, sortDate, filterAuthor, filterTitle }) => {
 	return (
 		<div className="QueryPanel">
 			<TextInput
 				className={"AuthorSearch"}
 				textInputLabel={"Search by Author"}
-				textInputValue={""}
-				onChange={(event) => setBlogs(event.target.value)}
+				onChange={(event) => filterAuthor(event.target.value)}
 			></TextInput>
 			<TextInput
 				className={"TitleSearch"}
 				textInputLabel={"Search by Title"}
-				textInputValue={""}
-				onChange={(event) => setBlogs(event.target.value)}
+				onChange={(event) => filterTitle(event.target.value)}
 			></TextInput>
 			<Select
 				className="DateSort"

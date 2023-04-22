@@ -2,10 +2,21 @@ import MiniBlog from "../components/MiniBlog/MiniBlog.jsx";
 import QueryPanel from "../components/QueryPanel/QueryPanel.jsx";
 import "./BlogPage.css";
 
-const BlogPage = ({ blogs, sortDate, sortLikes }) => {
+const BlogPage = ({
+	blogs,
+	sortDate,
+	sortLikes,
+	filterAuthor,
+	filterTitle,
+}) => {
 	return (
 		<>
-			<QueryPanel sortDate={sortDate} sortLikes={sortLikes}></QueryPanel>
+			<QueryPanel
+				sortDate={sortDate}
+				sortLikes={sortLikes}
+				filterAuthor={filterAuthor}
+				filterTitle={filterTitle}
+			></QueryPanel>
 			<div className="BlogPage">
 				{blogs.map((blog) => (
 					<MiniBlog

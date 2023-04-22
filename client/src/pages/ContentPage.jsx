@@ -12,11 +12,13 @@ const ContentPage = () => {
 	const [blogs, setBlogs] = useState([]);
 	const [currentPage, setCurrentPage] = useState(1);
 	const [recordsPerPage] = useState(6);
+	const [originalBlogs, setOriginalBlogs] = useState([]);
 
 	useEffect(() => {
 		fetchBlogs().then((blogs) => {
 			console.log(blogs);
 			setBlogs(blogs);
+			setOriginalBlogs(blogs);
 		});
 	}, []);
 
@@ -50,6 +52,33 @@ const ContentPage = () => {
 		}
 	};
 
+	const handleFilterAuthor = (value) => {
+		if (value.length === 0) {
+			setBlogs(originalBlogs);
+			console.log(value);
+			console.log(originalBlogs);
+		} else {
+			const filteredBlogs = blogs.filter((blog) =>
+				blog.author.toLowerCase().includes(value.toLowerCase())
+			);
+			console.log(value);
+			setBlogs(filteredBlogs);
+		}
+	};
+
+	const handleFilterTitle = (value) => {
+		if (value === "") {
+			setBlogs(originalBlogs);
+			console.log(value);
+		} else {
+			const filteredBlogs = blogs.filter((blog) =>
+				blog.title.toLowerCase().includes(value.toLowerCase())
+			);
+			console.log(value);
+			setBlogs(filteredBlogs);
+		}
+	};
+
 	const indexOfLastRecord = currentPage * recordsPerPage;
 	const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
 	const currentRecords = blogs.slice(indexOfFirstRecord, indexOfLastRecord);
@@ -61,6 +90,8 @@ const ContentPage = () => {
 				blogs={currentRecords}
 				sortDate={handleSortDate}
 				sortLikes={handleSortLikes}
+				filterAuthor={handleFilterAuthor}
+				filterTitle={handleFilterTitle}
 			/>
 			<Pagination
 				nPages={nPages}

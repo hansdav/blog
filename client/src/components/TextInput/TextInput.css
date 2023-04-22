@@ -1,11 +1,3 @@
-div {
-	display: flex;
-	flex-wrap: wrap;
-}
-
 label {
 	width: 100%;
-}
-
-input {
 }

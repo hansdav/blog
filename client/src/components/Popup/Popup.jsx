@@ -1,5 +1,6 @@
 import './Popup.css';
 import { useState } from 'react';
+import { Outlet, Link } from 'react-router-dom';
 
 function Popup(props) {
   console.log(props.id);
@@ -38,7 +39,9 @@ function Popup(props) {
             />
             {currentLikes}
           </div>
-          <button className='update-button'>Update Blog</button>
+          <Link to='/UpdateBlog'>
+            <button className='update-button'>Update Blog</button>
+          </Link>
         </div>
         <div className='popup-title'>
           <h1>{props.title}</h1>

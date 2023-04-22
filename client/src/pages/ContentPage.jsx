@@ -87,7 +87,7 @@ const ContentPage = () => {
 
   return (
     <div>
-      <MostLikes blogs={blogs} />
+      <MostLikes blogs={originalBlogs} />
       <BlogPage
         blogs={currentRecords}
         sortDate={handleSortDate}

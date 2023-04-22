@@ -38,3 +38,11 @@ a:visited {
 .button-create:hover {
   background-color: blanchedalmond;
 }
+
+.footer {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: blanchedalmond;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}

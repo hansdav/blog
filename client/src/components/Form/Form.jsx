@@ -78,7 +78,7 @@ const Form = (props) => {
           post: contentValue,
         });
   };
-
+console.log(titleValue)
   return (
     <div className="Form">
       <TextInput

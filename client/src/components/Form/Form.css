@@ -1,0 +1,35 @@
+.Form {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+    width: 300px;
+}
+
+.Form-DateInput {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    padding: 10px;
+    margin: 15px;
+}
+
+.Formbuttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 300px;
+    padding: 10px;
+    margin: 5px;
+}
+
+.Form-button {
+    border-radius: 20px;
+    font-size: 16px;
+    padding: 10px;
+    margin: 5px;
+}
+  
+.Form-button:hover {
+    background-color: blanchedalmond;
+}

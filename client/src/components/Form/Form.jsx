@@ -1,37 +1,40 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import DateInput from "../DateInput/DateInput.jsx";
 import TextInput from "../TextInput/TextInput.jsx";
 import Textarea from "../Textarea/Textarea.jsx";
 import Button from "../Button/Button.jsx";
+import "./Form.css";
 
 const Form = (props) => {
+  const navigate = useNavigate();
   const [blogData, setBlogData] = useState(props.blogData);
 
-  const date = () => {
-    const newDate = new Date();
+  const date = (dateProp) => {
+    const newDate = new Date(dateProp);
     const year = newDate.getFullYear();
     const month = (newDate.getMonth() + 1).toString().padStart(2, "0");
     const date = newDate.getDate().toString().padStart(2, "0");
     const dateValue = `${year}-${month}-${date}`;
+    console.log(dateValue);
     return dateValue;
   };
 
   const [titleValue, setTitleValue] = useState("");
-  const [dateInputValue, setDateInputValue] = useState(date());
+  const [dateInputValue, setDateInputValue] = useState(date(new Date()));
   const [authorValue, setAuthorValue] = useState("");
   const [contentValue, setContentValue] = useState("");
 
   useEffect(() => {
-    if (blogData) {
-      setTitleValue(blogData.title);
-      setDateInputValue(blogData.date);
-      setAuthorValue(blogData.author);
-      setContentValue(blogData.blogContent);
+    if (props.blogData) {
+      console.log(props.blogData);
+      setTitleValue(props.blogData.title);
+      setDateInputValue(date(props.blogData.created));
+      setAuthorValue(props.blogData.author);
+      setContentValue(props.blogData.post);
     }
-  }, [blogData]);
-
-  //console.log(blogData);
+  }, [props.blogData]);
 
   const onChangeTitle = (e) => {
     setTitleValue(e.target.value);
@@ -53,45 +56,64 @@ const Form = (props) => {
     setBlogData({ ...blogData, post: e.target.value });
   };
 
-  //console.log(dateInputValue);
-
   const onCancelButtonClicked = () => {
     console.log("cancel");
+    navigate("/");
   };
 
   const onPostButtonClicked = () => {
-    console.log("post");
-    console.log({...blogData, likes: 0});
-    props.functionFromCreateBlogPage({...blogData, likes: 0});
+    props.blogData
+      ? props.functionFromCreateBlogPage({
+          title: titleValue,
+          created: dateInputValue,
+          author: authorValue,
+          post: contentValue,
+          likes: props.blogData.likes,
+          _id: props.blogData._id,
+        })
+      : props.functionFromCreateBlogPage({
+          title: titleValue,
+          created: dateInputValue,
+          author: authorValue,
+          post: contentValue,
+        });
   };
 
   return (
-    <div>
+    <div className="Form">
       <TextInput
-        labelTextInput="Title: "
+        textInputLabel="Title: "
         textInputValue={titleValue}
-        onTextInputChange={onChangeTitle}
+        onChange={onChangeTitle}
       />
       <DateInput
+        DateInputClass="Form-DateInput"
         labelDateInput="Date: "
         dateInputValue={dateInputValue}
         onChangeDateInput={onChangeDate}
       />
       <TextInput
-        labelTextInput="Author: "
+        textInputLabel="Author: "
         textInputValue={authorValue}
-        onTextInputChange={onChangeAuthor}
+        onChange={onChangeAuthor}
       />
       <Textarea
         labelTextarea="Blog Content: "
         textareaValue={contentValue}
         onTextareaChange={onChangeContent}
       />
-      <Button
-        onButtonClicked={onPostButtonClicked}
-        buttonText={blogData ? "Update" : "Post"}
-      />
-      <Button onButtonClicked={onCancelButtonClicked} buttonText="Cancel" />
+      <div className="Formbuttons">
+        <Button
+          buttonClass="Form-button"
+          onButtonClicked={onPostButtonClicked}
+          buttonText={props.blogData ? "Update" : "Post"}
+        />
+        <Button
+          buttonClass="Form-button"
+          onButtonClicked={onCancelButtonClicked}
+          buttonText="Cancel"
+        />
+      </div>
     </div>
   );
 };

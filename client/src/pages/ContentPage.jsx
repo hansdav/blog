@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import BlogPage from "./BlogPage";
 import "./ContentPage.css";
+import MostLikes from "../components/MostLikes/MostLikes";
 
 import Pagination from "../components/Pagination/Pagination";
 

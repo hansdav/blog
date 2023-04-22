@@ -5,6 +5,7 @@ import DateInput from "../DateInput/DateInput.jsx";
 import TextInput from "../TextInput/TextInput.jsx";
 import Textarea from "../Textarea/Textarea.jsx";
 import Button from "../Button/Button.jsx";
+import "./Form.css";
 
 const Form = (props) => {
   const navigate = useNavigate();
@@ -27,7 +28,7 @@ const Form = (props) => {
 
   useEffect(() => {
     if (props.blogData) {
-      console.log(props.blogData)
+      console.log(props.blogData);
       setTitleValue(props.blogData.title);
       setDateInputValue(date(props.blogData.created));
       setAuthorValue(props.blogData.author);
@@ -61,25 +62,27 @@ const Form = (props) => {
   };
 
   const onPostButtonClicked = () => {
-    props.blogData ? props.functionFromCreateBlogPage({
-      title: titleValue,
-      created: dateInputValue,
-      author: authorValue,
-      post: contentValue,
-      likes: props.blogData.likes,
-      _id: props.blogData._id,
-    }) : props.functionFromCreateBlogPage({
-      title: titleValue,
-      created: dateInputValue,
-      author: authorValue,
-      post: contentValue,
-    })
+    props.blogData
+      ? props.functionFromCreateBlogPage({
+          title: titleValue,
+          created: dateInputValue,
+          author: authorValue,
+          post: contentValue,
+          likes: props.blogData.likes,
+          _id: props.blogData._id,
+        })
+      : props.functionFromCreateBlogPage({
+          title: titleValue,
+          created: dateInputValue,
+          author: authorValue,
+          post: contentValue,
+        });
   };
 
   return (
-    <div>
+    <div className="Form">
       <TextInput
-        labelTextInput="Title: "
+        textInputLabel="Title: "
         textInputValue={titleValue}
         onTextInputChange={onChangeTitle}
       />
@@ -89,7 +92,7 @@ const Form = (props) => {
         onChangeDateInput={onChangeDate}
       />
       <TextInput
-        labelTextInput="Author: "
+        textInputLabel="Author: "
         textInputValue={authorValue}
         onTextInputChange={onChangeAuthor}
       />
@@ -98,11 +101,16 @@ const Form = (props) => {
         textareaValue={contentValue}
         onTextareaChange={onChangeContent}
       />
-      <Button
-        onButtonClicked={onPostButtonClicked}
-        buttonText={props.blogData ? "Update" : "Post"}
-      />
-      <Button onButtonClicked={onCancelButtonClicked} buttonText="Cancel" />
+      <div className="Formbuttons">
+        <Button
+          onButtonClicked={onPostButtonClicked}
+          buttonText={props.blogData ? "Update" : "Post"}
+        />
+        <Button
+          onButtonClicked={onCancelButtonClicked}
+          buttonText="Cancel"
+        />
+      </div>
     </div>
   );
 };

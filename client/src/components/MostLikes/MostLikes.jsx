@@ -12,7 +12,7 @@ const MostLikes = ({ blogs }) => {
       setBestBlogs(bestTwoBlogs);
     }
   }, [blogs]);
-
+  console.log();
   ////nothinggg
   return (
     <div>
